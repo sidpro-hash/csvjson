@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>CSV to JSON - CSVJSON</title>
+      <meta charset="utf-8" />
+      <meta name="author" content="SidPro"/>
+      <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+      <meta name="description" content="Online tools that format and convert CSV (Excel) files into JSON format."/>
+      <meta name="keywords" content="csvjson,json conversion,csv to json"/>
+      <!-- icons -->
+      <link rel="apple-touch-icon" sizes="57x57" href="icons/favicon-57x57.png" />
+      <link rel="apple-touch-icon" sizes="60x60" href="icons/favicon-60x60.png" />
+      <link rel="apple-touch-icon" sizes="72x72" href="icons/favicon-72x72.png" />
+      <link rel="apple-touch-icon" sizes="76x76" href="icons/favicon-76x76.png" />
+      <link rel="apple-touch-icon" sizes="114x114" href="icons/favicon-114x114.png" />
+      <link rel="apple-touch-icon" sizes="120x120" href="icons/favicon-120x120.png" />
+      <link rel="apple-touch-icon" sizes="152x152" href="icons/favicon-152x152.png" />
+      <link rel="apple-touch-icon" sizes="180x180" href="icons/favicon-180x180.png" />
+      <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png" />
+      <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png" />
+      <link rel="icon" type="image/png" sizes="96x96" href="icons/favicon-96x96.png" />
+      <link rel="icon" type="image/png" sizes="192x192" href="icons/favicon-192x192.png" />
+      <link rel="shortcut icon" type="image/x-icon" href="icons/favicon.ico" />
+      <link rel="icon" type="image/x-icon" href="icons/favicon.ico" />
+      <meta name="msapplication-TileColor" content="#ffffff" />
+      <meta name="msapplication-config" content="icons/browserconfig.xml" />
+      <link rel="manifest" href="icons/manifest.json" />
+      <!-- icons -->
+      <script type="text/javascript">
+         window.APP = {
+         	page: 'csvtojson',
+         	run:  false,
+         	version: '0.316',
+         	id: 'null',
+         	data: 'null',
+         	data_url: 'null'
+         };
+      </script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js" type="text/javascript"></script>
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" />
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+      <link href="css/jquery.fileupload.css" rel="stylesheet" type="text/css" charset="utf-8" />
+      <script src="https://kit.fontawesome.com/5e8f32d58e.js" crossorigin="anonymous"></script>
+      <link href="css/csvjson.css" rel="stylesheet" type="text/css" charset="utf-8" />
+      <script src="js/3rd.min.js" type="text/javascript"></script>
+      <script src="js/csv2json.min.js" type="text/javascript"></script>
+      <script src="js/index.js" type="text/javascript"></script>
+      <link rel="stylesheet" href="css/footer.css"/>
+   </head>
+   <body>
+      <!-- nav -->
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+         <div class="container-fluid">
+         <a class="navbar-brand" href="/">CSVJSON</a>
+         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+         </button>
+         <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+               <!-- <li class="nav-item">
+               <a class="nav-link" href="about.html">About</a>
+               </li> -->
+               <li class="nav-item dropdown">
+               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Tools
+               </a>
+               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="https://collegeek.com/Live_DHTML/index.html">Live Editor</a></li>
+                  <li><a class="dropdown-item" href="https://dashboard.collegeek.com/">Dashboard</a></li>
+                  <li><a class="dropdown-item" href="https://linkshare.collegeek.com/">Link Share</a></li>
+                  <li><hr class="dropdown-divider"/></li>
+                  <li><a class="dropdown-item" href="https://collegeek.com/">Collegeek.com</a></li>
+               </ul>
+               </li>
+            </ul>
+         </div>
+         </div>
+      </nav>
+      <!-- nav -->
+      <div class="container px-4 py-5">
+         <div class="row">
+            <div class="description col-md-12">
+               <h1 style="color:cornflowerblue" class="fw-bold">CSV or TSV <small class="bi bi-chevron-right"></small>JSON</h1>
+               <p>To get started, upload or paste your data from Excel (saved as CSV or TSV).</p>
+            </div>
+         </div>
+         <noscript>
+            <i style="color:orange;font-size:24px;">Your browser does not support JavaScript!</i><br/>
+             <img src="images/noscript.png" style="width:auto;height:auto;" />
+          </noscript>
+         <div class="row gx-5">
+            <div class="col-md-5 mb-5">
+               <div class="mb-5">
+                  <label class="form-label">Upload a CSV file</label>
+                  <input id="fileupload" type="file" name="file" class="form-control"/>
+               </div>
+               <div class="mb-3">
+                  <label class="form-label">Or paste your CSV here</label>
+                  <textarea id="csv"  class="form-control input save" rows="18" spellcheck="false">
+album, year, US_peak_chart_post
+The White Stripes, 1999, -
+De Stijl, 2000, -
+White Blood Cells, 2001, 61
+Elephant, 2003, 6
+Get Behind Me Satan, 2005, 3
+Icky Thump, 2007, 2
+Under Great White Northern Lights, 2010, 11
+Live in Mississippi, 2011, -
+Live at the Gold Dollar, 2012, -
+Nine Miles from the White City, 2013, -
+                  </textarea>
+               </div>
+               <button id="convert" type="submit" class="btn btn-primary mb-2 me-2">
+               <i class="bi bi-chevron-right"></i> Convert
+               </button>
+               <button id="clear" type="submit" class="btn btn-light mb-2 me-2">
+               <i class="bi bi-backspace"></i> Clear
+               </button>
+            </div>
+            <div class="col-md-7 more-bottom-margin">
+               <div class="mb-3">
+                  <div class="form-check-inline">
+                     <label class="form-label me-2 save" title="Choose your separator">
+                        <div class="mb-2">Separator</div>
+                        <select class="form-select" id="separator" name="separator">
+                           <option value="auto" selected="selected">Auto-detect</option>
+                           <option value="comma">Comma</option>
+                           <option value="semiColon">Semi-colon</option>
+                           <option value="tab">Tab</option>
+                        </select>
+                     </label>
+                  </div>
+                  <div class="form-check-inline">
+                     <input type="checkbox" id="parseNumbers" name="parseNumbers" class="form-check-input save" checked="checked"/>
+                     <label class="form-check-label" title="Check to parse numbers (i.e. '7e2' would become 700). Uncheck to keep original formatted numbers as strings.">
+                     Parse numbers
+                     </label>
+                  </div>
+                  <div class="form-check-inline">
+                     <input type="checkbox" id="parseJSON" name="parseJSON" class="form-check-input save" checked="checked"/>
+                     <label class="form-check-label" title="Check to parse potential values as JSON (numbers, null, false, true, [] and {}). Uncheck to keep original values as strings.">
+                     Parse JSON
+                     </label>
+                  </div>
+                  <div class="form-check-inline">
+                     <input type="checkbox" id="transpose" name="transpose" class="form-check-input save" />
+                     <label class="form-check-label" title="Transpose the data beforehand.">
+                     Transpose
+                     </label>
+                  </div>
+                  <br/>
+                  <div class="form-check-inline">
+                     <label class="form-check-label me-2">Output:</label>
+                     <input type="radio" id="output-array" name="output" class="form-check-input save" value="array" checked="checked" />
+                     <label class="form-check-label" title="Output an array of objects.">
+                     Array
+                     </label>
+                  </div>
+                  <div class="form-check-inline">
+                     <input type="radio" id="output-hash" name="output" class="form-check-input save" value="hash" />
+                     <label class="form-check-label" title="Output an object instead of an array. First column is used as hash key.">
+                     Hash
+                     </label>
+                  </div>
+                  <div class="form-check-inline">
+                     <input type="checkbox" id="minify" name="minify" class="form-check-input save" />
+                     <label class="form-check-label" title="Minify or compact result by removing spaces and new lines.">
+                     Minify
+                     </label>
+                  </div>
+               </div>
+               <div class="mb-3">
+                  <label class="form-label">JSON</label> <span class="result-note"></span>
+                  <textarea id="result" class="form-control result save" rows="18" spellcheck="false" disabled="disabled"></textarea>
+               </div>
+               <a id="download" class="btn btn-primary mb-2 me-2" href="" download="csvjson.json" disabled="disabled" target="_self">
+               <i class="bi bi-cloud-download"></i> Download
+               </a>
+               <a id="copy" class="btn btn-light mb-2 me-2" href="#" title="or Ctrl + A then Ctrl + C to copy to clipboard."><i class="bi bi-share"></i> Copy to clipboard</a>
+            </div>
+         </div>
+      </div>
+      <div class="container px-4 py-5" id="about-csvjson">
+         <h2 class="pb-2 border-bottom">More Details</h2>
+         <div class="row row-cols-1 row-cols-sm-1 row-cols-md-12 row-cols-lg-12 g-4 py-3">
+            <div class="col d-flex align-items-start">
+               <div>
+                  <ul>
+                     <li>
+                        CSV stands for <a href="http://en.wikipedia.org/wiki/Comma-separated_values" target="_blank">Comma Separated Values</a>.
+                        Often used as an interchange data format to represent table records, one per line. CSV is plain text.
+                     </li>
+                     <li>
+                        The CSV format is documented in an RFC memo <a href="https://tools.ietf.org/html/rfc4180" target="_blank">RFC-4180</a>.
+                     </li>
+                     <li>
+                        The first line is often the header, or column names. Each subsequent row is a record and should have the same number of fields.
+                     </li>
+                     <li>
+                        Fields containing the separator character, line breaks and double-quotes must be enclosed inside double quotes <code>"</code>.
+                     </li>
+                     <li>
+                        Other separator are often used like tabs <code>\t</code>or semi-colons <code>;</code>.
+                        TSV or Tab Separated Values is used to store table data in Clipboards.
+                        When data is copied from Excel for example, it is stored as TSV in the Clipboard.
+                     </li>
+                     <li>
+                        With CSVJSON you can parse values as numbers or JSON. Turn on respective <strong>Parse Numbers</strong> and <strong>Parse JSON</strong> switches to convert valid numbers and JSON (null, false, true, [] and {}).
+                     </li>
+                     <li>
+                        With CSVJSON you can transpose the csv before conversion. Rows become columns, and columns become rows.
+                     </li>
+                     <li>
+                        With CSVJSON you can output a hash (or object) instead of an array. In that case, the hash key will be the first column.
+                     </li>
+                  </ul>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- Footer -->
+      <div class="ft" style="font-family: calibri,sans-serif;">
+         <footer>
+         <div class="ft-container">
+            <div class="sec aboutus">
+               <h2>About Us</h2>
+               <p style="margin-left:0px;">Online tool that format and convert CSV (Excel) files into JSON format.</p>
+                  <ul class="sci">
+               <li><a href="https://github.com/sidpro-hash" target="_blank"><i class="fab fa-github"></i></a></li>
+                     <!-- <li><a href="https://twitter.com/GabuSiddharth" target="_blank"><i class="fab fa-twitter"></i></a></li> -->
+                     <li><a href="https://www.instagram.com/collegeekonline/" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                  </ul>
+               </div>
+               <div class="sec quickLinks">
+               <h2>Quick Links</h2>
+                     <ul>
+                     <li><a href="https://collegeek.com/about.html" target="_blank">About</a></li>
+                     <li><a href="https://cpp-collegeek.herokuapp.com/" target="_blank">Online Compiler</a></li>
+                     <li><a href="https://linkshare.collegeek.com/" target="_blank">LinkShare</a></li>
+                     <li><a href="https://collegeek.com/Live_DHTML/index.html" target="_blank">Live Editor</a></li>
+                     <li><a href="https://collegeek.com/privecypolicy.html" target="_blank">Privacy Policy</a></li>
+                     <li><a href="https://collegeek.com/Termsandcondition.html" target="_blank">Terms & Conditions</a></li>
+                     </ul>
+               </div>
+               <div class="sec ft-contact">
+               <h2>Contact Info</h2>
+                     <ul class="info">
+                     <li>
+                        <span><i class="fas fa-map-marker-alt"></i></span>
+                        <span>80 Feet Road, Anand Bagh, <br>Surendranagar, Gujarat <br>363001</span>
+                     </li>
+                     <li>
+                        <span><i class="fas fa-envelope"></i></span>
+                        <span><a href="mailto:collegeekonline@gmail.com">collegeekonline@gmail.com</a></span>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+         </footer>
+         <div class="copyrightText">
+            <p>© Copyright 2020-<script>document.write(new Date().getFullYear())</script> by <b><span style="font-size:20px;">C</span>ollegeek</b>. All Rights Reserved.<p>
+         </div>
+      </div>
+      <!-- Footer -->
+   </body>
+</html>

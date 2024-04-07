@@ -1,0 +1,41 @@
+.body404 {
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  background-color: #1a1a1a;
+  color: #ffffff;
+  text-align: center;
+}
+
+.h1404 {
+  color: #5ab9ff;
+  font-size: 6em;
+  margin-bottom: 20px;
+}
+
+.p404 {
+  font-size: 1.5em;
+  margin-top: 5px;
+}
+
+.img404 {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.a404 {
+  color: #5ab9ff;
+  text-decoration: none;
+}
+
+.a404:hover {
+  text-decoration: underline;
+}
+
+@media only screen and (max-width: 600px) {
+  .p404{
+    font-size: 1.2em;
+  }
+  .h1404 {
+    font-size: 4.5em;
+  }
+}
